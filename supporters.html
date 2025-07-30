@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supporters - StarBound </title>
+    <link rel="icon" type="image/svg+xml" href="Icons/starbound_team_logo_bg.svg">
+    <link rel="stylesheet" href="css/top_bar.css">
+    <link rel="stylesheet" href="css/supporters.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Fix for scrolling performance */
+        body {
+            overflow-y: auto; /* Ensure scrolling is enabled */
+        }
+        
+        #cosmic-background {
+            will-change: transform;
+            z-index: -1;
+            pointer-events: none;
+            position: fixed; /* Keep background fixed when scrolling */
+        }
+        
+        .cosmic-star {
+            will-change: opacity;
+            pointer-events: none;
+        }
+        
+        /* Improve container performance */
+        .supporters-container {
+            position: relative;
+            z-index: 2;
+            contain: content;
+        }
+        
+        /* Optimize card rendering */
+        .card {
+            contain: layout style;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav-links">
+    <!-- Logo and Company Name --> 
+    <img class="bg-svg" src="Icons/top_bar_background.svg" alt="Background SVG">
+    <li class="logo">
+        <a href="index.html">
+            <img src="Icons/starbound_team_logo.svg" alt="Company Logo" class="logo-img">
+        </a>
+        <span class="company-name">
+            <span class="company-title">StarBound</span>
+            <span class="company-subtitle">An Aerospace Research Student Team</span>
+        </span>
+    </li>
+    <!-- Navigation Links -->
+    <div class="nav-items">
+        <li><a href="index.html" onclick="setActive(this)" data-en="Home" data-el="Αρχική">Home</a></li>
+        <li><a href="members.html" onclick="setActive(this)" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+        <li><a href="news.html" onclick="setActive(this)" data-en="News" data-el="Νέα">News</a></li>
+        <li><a href="supporters.html" onclick="setActive(this)" class="active" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+        <li><a href="contact.html" onclick="setActive(this)" data-en="Contact" data-el="Επικοινωνία">Contact Us</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUHR5nvLINE5B_iUFckAYPgUM81P3yGozB6FuNV6q6mYjOQ/viewform" class="join-button" data-en="Join Us" data-el="Γίνε Μέλος" target="_blank">Join Us</a></li>
+    </div>
+    <a href="https://www.uth.gr/" target="_blank" class="uth-logo-header">
+        <img src="Icons/UTH_english_logo.svg" alt="UTH Logo" class="uth-logo-img" data-en="Icons/UTH_english_logo.svg" data-el="Icons/UTH_greek_logo.svg">
+    </a>
+    <div class="flags">
+        <img src="Icons/Flag_of_Greece.svg" alt="Greek" class="flag" onclick="changeLanguage('el')">
+        <img src="Icons/Flag_of_the_United_Kingdom.svg" alt="English" class="flag" onclick="changeLanguage('en')">
+    </div>
+</ul>
+<div class="supporters-container">
+    <h1 class="supporters-title" data-translate="supportersTitle">Our Supporters</h1>
+    
+    <!-- Galaxy Tier (Purple) -->
+    <div class="supporters-category">
+        <h2 data-translate="galaxy">Galaxy</h2>
+        <div class="supporters-cards">
+            <!-- Galaxy sponsors will go here -->
+        </div>
+    </div>
+    
+    <!-- Gold Tier -->
+    <div class="supporters-category">
+        <h2 data-translate="gold">Gold</h2>
+        <div class="supporters-cards">
+            <div class="card">
+                <img src="Icons/xexaspro_logo.svg" alt="Gold Supporter Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name" data-en="XEXASPRO" data-el="ΞΕΞΑΣΠΡΟ">XEXASPRO</h3>
+                        <a href="https://www.xexaspro.gr/default.htm" class="read-more" target="_blank" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Icons/altair_logo.svg" alt="Gold Supporter Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name">Altair</h3>
+                        <a href="https://www.altair.com/" class="read-more" target="_blank" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pictures/caslab.png" alt="Gold Supporter Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name">CASLab</h3>
+                        <a href="https://caslab.e-ce.uth.gr/" class="read-more" target="_blank" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Silver Tier -->
+    <div class="supporters-category">
+        <h2 data-translate="silver">Silver</h2>
+        <div class="supporters-cards">
+            <div class="card">
+                <img src="Icons/logistiki_elegktiki.svg" alt="Silver Supporter Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name" data-en="Logistiki Elegktiki" data-el="Λογιστική Ελεγκτική">Logistiki Elegktiki</h3>
+                        <a href="#" class="read-more" target="_blank" data-translate="readMore" data-link-en="https://accaud.uth.gr/en/" data-link-el="https://accaud.uth.gr/">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Collaborators Tier (Light Green) -->
+    <div class="supporters-category">
+        <h2 data-translate="collaborators">Collaborators</h2>
+        <div class="supporters-cards">
+            <div class="card">
+                <img src="Icons/semianova_babushka.svg" alt="Collaborator Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name">SEMIANOVA Language School</h3>
+                        <a href="https://www.facebook.com/semianova.russian/" class="read-more" target="_blank" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="pictures/coin-3d-project.jpg" alt="Collaborator Logo">
+                <div class="card-overlay">
+                    <div class="card-description">
+                        <h3 class="sponsor-name">Coin 3D Project</h3>
+                        <a href="#" class="read-more" target="_blank" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section about-company animate-on-scroll">
+                <h3 data-en="About StarBound" data-el="Σχετικά με τη StarBound">About StarBound</h3>
+                <p data-en="StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology."
+                   data-el="Η StarBound είναι μια φοιτητική ομάδα αεροδιαστημικής έρευνας με έδρα τον Βόλο. Ασχολία της είναι η καινοτομία και η έρευνα στον χώρο της διαστημικής τεχνολογίας.">
+                   StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology.
+                </p>
+                <div class="social-links">
+                    <!-- <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <a href="https://gr.linkedin.com/company/starbound-project" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/starbound.project/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Partner Logos added to footer -->
+                <div class="partner-logos-footer">
+                    <a href="https://www.uth.gr/" target="_blank">
+                        <img src="Icons/UTH_greek_logo.svg" alt="UTH Logo" class="partner-logo-footer">
+                    </a>
+                    <a href="https://www.ieee.org/" target="_blank">
+                        <img src="Icons/ieee_sb.svg" alt="IEEE Logo" class="partner-logo-footer">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Quick Links" data-el="Γρήγοροι Σύνδεσμοι">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" data-en="Home" data-el="Αρχική">Home</a></li>
+                    <li><a href="members.html" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+                    <li><a href="supporters.html" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+                    <li><a href="news.html" data-en="News" data-el="Νέα">News</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-el="Επικοινωνία">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Contact Us" data-el="Επικοινωνία">Contact Us</h3>
+                <div class="contact-box-container">
+                    <div class="contact-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p data-en="University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece" data-el="Πανεπιστήμιο Θεσσαλίας, Πολυτεχνική Σχολή, Πεδίον Άρεως, Βόλος, Ελλάδα">
+                            University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece
+                            </p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+30 6974814209<br><span data-en="(Charis Zachariadis)" data-el="(Χάρης Ζαχαριάδης)">(Charis Zachariadis)</span></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>starbound.teamuth@gmail.com</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="footer-contact-link" 
+                   data-en="Contact Form" data-el="Φόρμα Επικοινωνίας">Contact Form</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p data-en="© 2025 StarBound - University of Thessaly. All rights reserved." 
+               data-el="© 2025 StarBound - Πανεπιστήμιο Θεσσαλίας. Με επιφύλαξη παντός δικαιώματος.">
+                © 2025 StarBound - University of Thessaly. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Social media icon styling */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color for icons */
+    border-bottom: none; /* Explicitly remove bottom border */
+}
+
+.social-icon:hover, .social-icon:focus {
+    background-color: #03a9f4;
+    transform: translateY(-3px);
+    text-decoration: none; /* Remove underline on hover */
+    border-bottom: none; /* Explicitly remove bottom border on hover */
+    outline: none; /* Remove outline on focus */
+}
+</style>
+<script src="functions/ActivateButton.js"></script>
+<script src="functions/language.js"></script>
+<script src="functions/refresh.js"></script>
+<script src="functions/mobileMenu.js"></script>
+<script src="functions/supportersTouchInteraction.js"></script>
+<script>
+// Create cosmic dust effect in the background
+document.addEventListener('DOMContentLoaded', function() {
+    // Create cosmic background container
+    const cosmicBackground = document.createElement('div');
+    cosmicBackground.id = 'cosmic-background';
+    document.body.appendChild(cosmicBackground);
+    
+    // Limit stars to a reasonable number - too many stars can cause performance issues
+    const numStars = Math.min(Math.floor(Math.random() * 30) + 70, 100); // Maximum 100 stars
+    
+    // Create stars in batches for better performance
+    const fragment = document.createDocumentFragment();
+    
+    for (let i = 0; i < numStars; i++) {
+        createStar(fragment);
+    }
+    
+    // Append all stars at once for better performance
+    cosmicBackground.appendChild(fragment);
+    
+    // Function to create a single star
+    function createStar(container) {
+        const star = document.createElement('div');
+        star.classList.add('cosmic-star');
+        
+        // Limit size to improve performance
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Position stars only within the viewport
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+        
+        // Random opacity
+        star.style.opacity = Math.random() * 0.6 + 0.3;
+        
+        // Vary animation delay for better performance
+        const delay = Math.random() * 5;
+        star.style.animationDelay = `${delay}s`;
+        
+        // Reduce shadow complexity for better performance
+        star.style.boxShadow = `0 0 ${Math.min(size, 2)}px ${Math.min(size/3, 0.6)}px rgba(255, 255, 255, 0.6)`;
+        
+        // Use simpler colors to improve performance
+        const colors = ['white', '#E1F5FE', '#FFFFFF', '#B3E5FC'];
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        star.style.backgroundColor = colors[colorIndex];
+        
+        // Add to container
+        container.appendChild(star);
+    }
+    
+    // Add resize event listener to maintain stars within viewport
+    window.addEventListener('resize', function() {
+        // Clear all stars and recreate them
+        while (cosmicBackground.firstChild) {
+            cosmicBackground.removeChild(cosmicBackground.firstChild);
+        }
+        
+        const newFragment = document.createDocumentFragment();
+        for (let i = 0; i < numStars; i++) {
+            createStar(newFragment);
+        }
+        cosmicBackground.appendChild(newFragment);
+    });
+});
+</script>
+</body>
+</html>

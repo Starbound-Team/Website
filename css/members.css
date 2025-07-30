@@ -1,0 +1,759 @@
+/* Members Page Styling */
+html {
+    height: 100%;
+}
+
+body {
+    /* Add padding to account for the fixed navigation bar - increased for more space */
+    margin: calc(100vh - 75vh) 0 0;  /* Changed from 80vh to 75vh to create a 25vh (25%) top margin */
+    min-height: 100%;
+    /* Updated to match the home page gradient */
+    background: linear-gradient(135deg, #1c2331 0%, #0c1016 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;  /* Prevent horizontal scrollbars */
+}
+
+/* Add animation for subtle gradient movement */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Cosmic background container styling */
+#cosmic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Behind all content */
+    pointer-events: none;  /* Don't interfere with clicks */
+}
+
+/* Cosmic star styling */
+.cosmic-star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: starTwinkle 3s infinite ease-in-out, starFloat 7s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* Star animation keyframes */
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes starFloat {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-3px) translateX(1px); }
+    50% { transform: translateY(-1px) translateX(3px); }
+    75% { transform: translateY(2px) translateX(-1px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* Add stars to the entire page background */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle r='1.5' cx='50' cy='50'/%3E%3Ccircle r='1.2' cx='100' cy='150'/%3E%3Ccircle r='1' cx='170' cy='90'/%3E%3Ccircle r='1.8' cx='230' cy='190'/%3E%3Ccircle r='1' cx='270' cy='130'/%3E%3Ccircle r='0.8' cx='330' cy='215'/%3E%3Ccircle r='1.5' cx='390' cy='120'/%3E%3Ccircle r='1.2' cx='460' cy='220'/%3E%3Ccircle r='1' cx='500' cy='90'/%3E%3Ccircle r='0.7' cx='570' cy='210'/%3E%3Ccircle r='1.3' cx='620' cy='120'/%3E%3Ccircle r='1' cx='680' cy='190'/%3E%3Ccircle r='1.2' cx='740' cy='100'/%3E%3Ccircle r='1.4' cx='150' cy='250'/%3E%3Ccircle r='1.1' cx='210' cy='320'/%3E%3Ccircle r='1.6' cx='280' cy='270'/%3E%3Ccircle r='0.9' cx='350' cy='350'/%3E%3Ccircle r='1.7' cx='420' cy='280'/%3E%3Ccircle r='1' cx='480' cy='340'/%3E%3Ccircle r='1.3' cx='550' cy='300'/%3E%3Ccircle r='1' cx='630' cy='355'/%3E%3Ccircle r='1.5' cx='700' cy='290'/%3E%3C/g%3E%3C/svg%3E");
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Add orbital ring to the entire page */
+body:after {
+    content: "";
+    position: fixed;
+    top: 35%;
+    left: -10%;
+    width: 120%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    transform: rotate(-3deg);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Replace the logo with the transparent version to remove the white background */
+.members-container:before {
+    content: "";
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 180px;
+    height: 180px;
+    background: url('../Icons/starbound_team_logo.svg') no-repeat center center; /* Use the transparent logo */
+    background-size: contain;
+    opacity: 0.6;
+    z-index: -1;
+    pointer-events: none;
+    animation: gentle-float 8s ease-in-out infinite;
+}
+
+/* Add floating animation for the logo */
+@keyframes gentle-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Since we have a space background now, let's make text/content stand out better */
+.members-container {
+    max-width: 1200px;
+    margin: 60px auto 0;  /* Increased from 30px to 60px for additional top margin */
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.members-title {
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px; /* Added new top margin to the title itself */
+    margin-bottom: 45px;
+    color: #ffffff;
+    position: relative;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    /* Updated to lighter blue-teal gradient */
+    background: linear-gradient(90deg, #40c9ff, #34d7eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.members-title:after {
+    display: none; /* Hide the underline */
+}
+
+.team-section {
+    margin-bottom: 60px;
+    /* Updated to match mission-feature from home page */
+    background: rgba(22, 22, 40, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(71, 118, 230, 0.2);
+    transition: all 0.3s ease;
+}
+
+.team-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(142, 84, 233, 0.5);
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    position: relative;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.section-title:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 30px;
+    border-radius: 3px;
+    /* Each team will have its own color defined below */
+}
+
+/* Now we can remove the aerospace header since the whole page has the theme */
+.aerospace-header {
+    display: none;
+}
+
+/* Members Page Styling */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));  /* Adjusted for circular cards */
+    gap: 40px;  /* Increased gap */
+    margin-bottom: 40px;
+}
+
+.member-card {
+    background: transparent;
+    overflow: visible;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    width: 220px; /* Increased width for better text display */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 280px; /* Added minimum height to ensure consistent spacing */
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo-container {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* This makes the photo container circular */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the photo container */
+    /* Team-specific border will be applied via the border properties from team classes */
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.member-details {
+    width: 100%;
+    margin-top: 15px;
+    padding: 0 5px; /* Added padding to prevent text from extending beyond card */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60px; /* Ensure consistent space for text */
+}
+
+.member-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px; /* Increased from 5px for better spacing */
+    color: #ffffff;
+    max-width: 100%; /* Ensure text doesn't overflow */
+    word-wrap: break-word; /* Ensures long names wrap properly */
+    line-height: 1.3; /* Improved line height for better readability */
+    overflow: visible; /* Allow text to be fully visible */
+    white-space: normal; /* Allow wrapping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.member-name .first-name,
+.member-name .last-name {
+    display: block;
+    line-height: 1.2;
+}
+
+.member-name .first-name {
+    margin-bottom: 2px;
+}
+
+/* Handle compound first names (like Anna Maria, Evangelia Maria) */
+.member-name .first-name.compound {
+    white-space: nowrap; /* Keep compound first names on one line */
+}
+
+.member-role {
+    font-size: 14px;
+    color: #d9d9d9;
+    font-style: italic;
+    max-width: 100%; /* Ensure text doesn't overflow */
+    word-wrap: break-word; /* Ensures long roles wrap properly */
+    line-height: 1.3; /* Improved line height for better readability */
+    overflow: visible; /* Allow text to be fully visible */
+    white-space: normal; /* Allow wrapping */
+    margin-bottom: 5px; /* Add margin to separate from department */
+}
+
+.member-department {
+    font-size: 12px;
+    color: #b0b0b0;
+    font-style: normal;
+    max-width: 100%;
+    word-wrap: break-word;
+    line-height: 1.3;
+    overflow: visible;
+    white-space: normal;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+.member-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 22, 40, 0.85);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover .member-info {
+    opacity: 1;
+}
+
+/* Style the social icons to appear below the roles of each member */
+.member-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Add spacing below the role */
+    gap: 10px; /* Add spacing between icons */
+}
+
+.member-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Set a fixed size for the icons */
+    height: 30px;
+    border-radius: 50%; /* Make the icons circular */
+    background-color: #000; /* Set background color */
+    color: #fff; /* Set icon color */
+    font-size: 16px; /* Adjust icon size */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effect */
+}
+
+.member-social a:hover {
+    background-color: #40c9ff; /* Change background color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Board styling - Royal purple for leadership */
+.board .member-photo-container {
+    border: 2px solid #5e17eb;
+    box-shadow: 0 10px 20px rgba(94, 23, 235, 0.2);
+}
+
+.board .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(94, 23, 235, 0.3);
+}
+
+.board .member-name {
+    color: #9370DB;
+}
+
+.board .section-title:before {
+    background: linear-gradient(to bottom, #9370DB, #5e17eb);
+}
+
+/* Professors styling - Academic burgundy for faculty authority */
+.professors .member-photo-container {
+    border: 2px solid #8b1538;
+    box-shadow: 0 10px 20px rgba(139, 21, 56, 0.2);
+}
+
+.professors .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(139, 21, 56, 0.3);
+}
+
+.professors .member-name {
+    color: #d32f2f;
+}
+
+.professors .section-title:before {
+    background: linear-gradient(to bottom, #d32f2f, #8b1538);
+}
+
+/* Software & Embedded Systems styling - Tech blue */
+.software .member-photo-container {
+    border: 2px solid #0077cc;
+    box-shadow: 0 10px 20px rgba(0, 119, 204, 0.2);
+}
+
+.software .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(0, 119, 204, 0.3);
+}
+
+.software .member-name {
+    color: #0077cc;
+}
+
+.software .section-title:before {
+    background: linear-gradient(to bottom, #2196F3, #0077cc);
+}
+
+/* Electrical styling - Electric yellow/amber */
+.electrical .member-photo-container {
+    border: 2px solid #ffab00;
+    box-shadow: 0 10px 20px rgba(255, 171, 0, 0.2);
+}
+
+.electrical .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(255, 171, 0, 0.3);
+}
+
+.electrical .member-name {
+    color: #d97706;
+}
+
+.electrical .section-title:before {
+    background: linear-gradient(to bottom, #ffc107, #ffab00);
+}
+
+/* Mechanical styling - Steel gray */
+.mechanical .member-photo-container {
+    border: 2px solid #546e7a;
+    box-shadow: 0 10px 20px rgba(84, 110, 122, 0.2);
+}
+
+.mechanical .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(84, 110, 122, 0.3);
+}
+
+.mechanical .member-name {
+    color: #455a64;
+}
+
+.mechanical .section-title:before {
+    background: linear-gradient(to bottom, #78909c, #546e7a);
+}
+
+/* Finance styling - Money green */
+.finance .member-photo-container {
+    border: 2px solid #2e7d32;
+    box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+}
+
+.finance .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.3);
+}
+
+.finance .member-name {
+    color: #2e7d32;
+}
+
+.finance .section-title:before {
+    background: linear-gradient(to bottom, #4caf50, #2e7d32);
+}
+
+/* Marketing styling - Creative orange */
+.marketing .member-photo-container {
+    border: 2px solid #e65100;
+    box-shadow: 0 10px 20px rgba(230, 81, 0, 0.2);
+}
+
+.marketing .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(230, 81, 0, 0.3);
+}
+
+.marketing .member-name {
+    color: #e65100;
+}
+
+.marketing .section-title:before {
+    background: linear-gradient(to bottom, #ff9800, #e65100);
+}
+
+/* Activities styling - Vibrant pink */
+.activities .member-photo-container {
+    border: 2px solid #c2185b;
+    box-shadow: 0 10px 20px rgba(194, 24, 91, 0.2);
+}
+
+.activities .member-card:hover .member-photo-container {
+    box-shadow: 0 15px 30px rgba(194, 24, 91, 0.3);
+}
+
+.activities .member-name {
+    color: #c2185b;
+}
+
+.activities .section-title:before {
+    background: linear-gradient(to bottom, #e91e63, #c2185b);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .members-title {
+        font-size: 36px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    /* Switch from grid to flexbox for better control on mobile */
+    .members-grid {
+        display: flex;
+        flex-wrap: wrap; /* Allow multiple members per row if space allows */
+        justify-content: center; /* Center items horizontally */
+        gap: 30px;
+    }
+    
+    .member-card {
+        width: 240px; /* Increased further to accommodate very long department names */
+        margin-bottom: 40px; /* Increased bottom margin to prevent overlap */
+        min-height: 350px; /* Increased minimum height significantly for department text */
+    }
+    
+    .member-photo-container {
+        width: 150px; /* Smaller photos on mobile */
+        height: 150px;
+    }
+    
+    .member-details {
+        min-height: 110px; /* Increased significantly to accommodate department text */
+        padding: 0 12px; /* Increased padding for better text spacing */
+        width: calc(100% - 24px); /* Account for padding */
+    }
+    
+    .member-department {
+        font-size: 10px; /* Smaller font to fit longer text */
+        line-height: 1.5; /* Better line height for mobile readability */
+        text-align: center; /* Ensure text is centered */
+        max-width: 100%; /* Ensure text doesn't overflow */
+        word-wrap: break-word; /* Allow long department names to wrap */
+        hyphens: auto; /* Enable automatic hyphenation for long words */
+        overflow-wrap: break-word; /* Additional support for word breaking */
+        white-space: normal; /* Ensure text can wrap to multiple lines */
+        margin-top: 3px; /* Small margin from role */
+    }
+    
+    .member-role {
+        font-size: 13px; /* Slightly smaller on mobile but still readable */
+        margin-bottom: 2px; /* Reduced margin for tighter spacing */
+    }
+    
+    .member-name {
+        font-size: 16px; /* Slightly smaller on mobile */
+        margin-bottom: 5px; /* Adjusted spacing */
+    }
+}
+
+/* iPad specific styles - portrait and landscape */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .member-card {
+        width: 260px; /* Wider cards for iPad to accommodate long department names */
+        min-height: 380px; /* Increased height for department text */
+    }
+    
+    .member-photo-container {
+        width: 180px; /* Maintain good photo size on iPad */
+        height: 180px;
+    }
+    
+    .member-details {
+        min-height: 120px; /* More space for text on iPad */
+        padding: 0 15px; /* Better padding for iPad screens */
+        width: calc(100% - 30px); /* Account for padding */
+    }
+    
+    .member-department {
+        font-size: 11px; /* Slightly larger font for iPad readability */
+        line-height: 1.5;
+        text-align: center;
+        max-width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin-top: 4px;
+    }
+    
+    .member-role {
+        font-size: 14px; /* Good size for iPad */
+        margin-bottom: 3px;
+    }
+    
+    .member-name {
+        font-size: 17px; /* Slightly larger for iPad */
+        margin-bottom: 6px;
+    }
+}
+
+/* iPad Pro and larger tablets */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .member-card {
+        width: 280px; /* Even wider for iPad Pro */
+        min-height: 400px; /* More height for larger screens */
+    }
+    
+    .member-details {
+        min-height: 130px; /* More space for text */
+        padding: 0 18px;
+        width: calc(100% - 36px);
+    }
+    
+    .member-department {
+        font-size: 12px; /* Larger font for iPad Pro */
+        line-height: 1.4;
+        margin-top: 5px;
+    }
+    
+    .member-role {
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+    
+    .member-name {
+        font-size: 18px;
+        margin-bottom: 7px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 896px) {
+    /* Maximum width constraint for the members grid to prevent any chance of overlap */
+    .members-grid {
+        max-width: 400px; /* Increased to accommodate wider cards */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .members-title {
+        font-size: 28px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .member-card {
+        width: 220px; /* Increased width for small screens */
+        min-height: 330px; /* Ensure enough height for all text */
+    }
+    
+    .member-photo-container {
+        width: 130px; /* Smaller photos on small mobile */
+        height: 130px;
+    }
+    
+    .member-details {
+        min-height: 100px; /* More space for text on small screens */
+        padding: 0 10px; /* Better padding for small screens */
+        width: calc(100% - 20px); /* Account for padding */
+    }
+    
+    .member-department {
+        font-size: 9px; /* Smaller font but still readable on very small screens */
+        line-height: 1.5;
+        text-align: center;
+        max-width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        white-space: normal;
+        margin-top: 3px;
+    }
+    
+    .member-role {
+        font-size: 12px; /* Adjusted for small screens */
+        margin-bottom: 2px;
+    }
+    
+    .member-name {
+        font-size: 15px; /* Adjusted for small screens */
+        margin-bottom: 4px;
+    }
+}
+
+/* Extra small screens - ensure department text is fully visible */
+@media (max-width: 380px) {
+    .member-card {
+        width: 200px;
+        min-height: 320px;
+    }
+    
+    .member-details {
+        min-height: 95px;
+        padding: 0 8px;
+        width: calc(100% - 16px);
+    }
+    
+    .member-department {
+        font-size: 8px; /* Very small but still readable */
+        line-height: 1.6; /* Better spacing for tiny text */
+        margin-top: 2px;
+    }
+}
+
+/* Remove contact info links in mobile versions */
+@media (max-width: 992px) {
+    .member-social {
+        display: none; /* Hide contact info links */
+    }
+}
+
+/* Remove contact info links for 360x800 screens */
+@media (max-width: 360px) and (max-height: 800px) {
+    .member-social {
+        display: none; /* Hide contact info links */
+    }
+}
+
+/* Ensure contact icons are always visible for 360x800 screens */
+@media (max-width: 365px) and (max-height: 880px) {
+    .member-social {
+        opacity: 1; /* Ensure icons are visible */
+        z-index: 10; /* Bring icons to the front */
+        position: relative; /* Ensure proper stacking context */
+    }
+
+    .member-card {
+        overflow: visible; /* Prevent clipping of icons */
+    }
+}
+
+/* Fix potential causes for contact icons not appearing */
+@media (max-width: 360px) and (max-height: 800px) {
+    .member-card {
+        position: relative; /* Ensure proper stacking context */
+        overflow: visible; /* Prevent clipping of child elements */
+    }
+
+    .member-social {
+        opacity: 1; /* Ensure icons are visible */
+        visibility: visible; /* Ensure icons are not hidden */
+        z-index: 10; /* Bring icons to the front */
+        position: relative; /* Ensure proper positioning */
+        display: flex; /* Ensure icons are displayed */
+        justify-content: center; /* Center icons horizontally */
+        align-items: center; /* Center icons vertically */
+        margin-top: 10px; /* Add spacing below the role */
+    }
+
+    .member-social a {
+        width: 30px; /* Set icon size */
+        height: 30px;
+        font-size: 16px; /* Adjust font size */
+        color: #fff;
+        text-decoration: none; /* Remove underline */
+        border-radius: 50%; /* Make icons circular */
+        display: flex; /* Ensure proper display */
+        justify-content: center; /* Center icons horizontally */
+        align-items: center; /* Center icons vertically */
+        background-color: #000; /* Set background color */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effect */
+    }
+
+    .member-social a:hover {
+        background-color: #40c9ff; /* Change background color on hover */
+        transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    }
+}

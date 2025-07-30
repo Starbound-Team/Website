@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - StarBound</title>
+    <link rel="icon" type="image/svg+xml" href="Icons/starbound_team_logo_bg.svg">
+    <link rel="stylesheet" href="css/top_bar.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Cosmic background styling for contact page */
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100%;
+            /* Apply the same background as contact2.html */
+            background: linear-gradient(135deg, rgba(10, 32, 68, 0.85) 0%, rgba(6, 19, 37, 0.9) 100%), url('pictures/ece-uth-building.JPG');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #cosmic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .cosmic-star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: starTwinkle 3s infinite ease-in-out, starFloat 7s infinite ease-in-out;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Simple animation for the background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Star animations */
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes starFloat {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-3px) translateX(1px); }
+            50% { transform: translateY(-1px) translateX(3px); }
+            75% { transform: translateY(2px) translateX(-1px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+        
+        /* Fix for email display on iOS devices */
+        .email-text {
+            font-family: 'Montserrat', sans-serif;
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            text-align: left;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            -ms-word-break: break-all;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+
+        @media (max-width: 767px) {
+            .info-item .email-text {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .info-item .email-text {
+                font-size: 12px;
+            }
+        }
+
+        /* Social media icon styling */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Remove underline */
+            color: white; /* Text color for icons */
+            border-bottom: none; /* Explicitly remove bottom border */
+        }
+
+        .social-icon:hover, .social-icon:focus {
+            background-color: #03a9f4;
+            transform: translateY(-3px);
+            text-decoration: none; /* Remove underline on hover */
+            border-bottom: none; /* Explicitly remove bottom border on hover */
+            outline: none; /* Remove outline on focus */
+        }
+    </style>
+</head>
+<body>
+<div id="cosmic-background"></div>
+
+<ul class="nav-links">
+    <!-- Logo and Company Name -->
+    <img class="bg-svg" src="Icons/top_bar_background.svg" alt="Background SVG">
+    <li class="logo">
+        <a href="index.html">
+            <img src="Icons/starbound_team_logo.svg" alt="Company Logo" class="logo-img">
+        </a>
+        <span class="company-name">
+            <span class="company-title">StarBound</span>
+            <span class="company-subtitle">An Aerospace Research Student Team</span>
+        </span>
+    </li>
+    <!-- Navigation Links -->
+    <div class="nav-items">
+        <li><a href="index.html" onclick="setActive(this)" data-en="Home" data-el="Αρχική">Home</a></li>
+        <li><a href="members.html" onclick="setActive(this)" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+        <li><a href="news.html" onclick="setActive(this)" data-en="News" data-el="Νέα">News</a></li>
+        <li><a href="supporters.html" onclick="setActive(this)" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+        <li><a href="contact.html" onclick="setActive(this)" class="active" data-en="Contact" data-el="Επικοινωνία">Contact Us</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUHR5nvLINE5B_iUFckAYPgUM81P3yGozB6FuNV6q6mYjOQ/viewform" class="join-button" data-en="Join Us" data-el="Γίνε Μέλος" target="_blank">Join Us</a></li>
+    </div>
+    <a href="https://www.uth.gr/" target="_blank" class="uth-logo-header">
+        <img src="Icons/UTH_english_logo.svg" alt="UTH Logo" class="uth-logo-img" data-en="Icons/UTH_english_logo.svg" data-el="Icons/UTH_greek_logo.svg">
+    </a>
+    <div class="flags">
+        <img src="Icons/Flag_of_Greece.svg" alt="Greek" class="flag" onclick="changeLanguage('el')">
+        <img src="Icons/Flag_of_the_United_Kingdom.svg" alt="English" class="flag" onclick="changeLanguage('en')">
+    </div>
+</ul>
+
+<!-- Hero Section with Contact Form and Map -->
+<div class="hero-section">
+    <div class="contact-container">
+        <div class="mission-header">
+            <h1 class="cosmic-title" data-en="CONTACT US" data-el="ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ">CONTACT US</h1>
+            <div class="cosmic-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-satellite"></i></div>
+                <div class="divider-line"></div>
+            </div>
+        </div>
+        
+        <div class="form-map-wrapper">
+            <div class="contact-form-container">
+                <div class="control-panel-lights">
+                    <span class="panel-light blue"></span>
+                    <span class="panel-light purple"></span>
+                    <span class="panel-light cyan"></span>
+                </div>
+                <h1 data-en="Send Us a Message" data-el="Στείλτε Μας Μήνυμα">Send Us a Message</h1>
+                <p class="subtitle" data-en="Fill in your email details" data-el="Συμπληρώστε τα στοιχεία του email σας">Fill in your email details</p>
+                
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-en="<i class='fas fa-user-astronaut'></i> USERNAME" data-el="<i class='fas fa-user-astronaut'></i> ΟΝΟΜΑ ΧΡΗΣΤΗ"><i class="fas fa-user-astronaut"></i> USERNAME</label>
+                        <input type="text" id="name" data-translate-placeholder="nameInput" placeholder="Enter your name..." class="cosmic-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="topic" data-en="<i class='fas fa-comment-alt'></i> TOPIC" data-el="<i class='fas fa-comment-alt'></i> ΘΕΜΑ"><i class="fas fa-comment-alt"></i> TOPIC</label>
+                        <input type="text" id="topic" data-translate-placeholder="topicInput" placeholder="Enter the topic..." class="cosmic-input">
+                    </div>
+                    <div class="form-group message-group">
+                        <label for="message" data-en="<i class='fas fa-comment-dots'></i> MESSAGE CONTENT" data-el="<i class='fas fa-comment-dots'></i> ΠΕΡΙΕΧΟΜΕΝΟ ΜΗΝΥΜΑΤΟΣ"><i class="fas fa-comment-dots"></i> MESSAGE CONTENT</label>
+                        <textarea id="message" rows="4" data-translate-placeholder="messageInput" placeholder="Your message to StarBound..." class="cosmic-input"></textarea>
+                    </div>
+                    <button type="button" class="submit-btn" onclick="sendMail()">
+                        <div class="btn-glow"></div>
+                        <span class="btn-text" data-en="SEND" data-el="ΑΠΟΣΤΟΛΗ">SEND</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="map-sidebar">
+                <div class="control-panel-lights">
+                    <span class="panel-light blue"></span>
+                    <span class="panel-light purple"></span>
+                    <span class="panel-light cyan"></span>
+                </div>
+                <h2 data-en="Visit Us" data-el="Επισκεφθείτε Μας">Visit Us</h2>
+                <p class="subtitle" data-en="Find us on the map" data-el="Βρείτε μας στον χάρτη">Find us on the map</p>
+                <div class="map-container">
+                    <div class="radar-overlay"></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.8012804763403!2d22.927912275624916!3d39.360736519233114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a76c72b7ed999b%3A0x451739b3833fb3a7!2sDept.%20of%20Electrical%20and%20Computer%20Engineering%2C%20University%20of%20Thessaly!5e0!3m2!1sen!2sgr!4v1744717952414!5m2!1sen!2sgr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-globe-europe"></i>
+                        <p data-en="University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece" data-el="Πανεπιστήμιο Θεσσαλίας, Πολυτεχνική Σχολή, Πεδίον Άρεως, Βόλος, Ελλάδα">University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece</p>
+                    </div>
+                    <div class="info-item email-container">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:starbound.teamuth@gmail.com" class="email-text">starbound.teamuth@gmail.com</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-satellite"></i>
+                        <p data-en="Department of Electrical & Computer Engineering" data-el="Τμήμα Ηλεκτρολόγων Μηχανικών & Μηχανικών Υπολογιστών">Department of Electrical & Computer Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section about-company animate-on-scroll">
+                <h3 data-en="About StarBound" data-el="Σχετικά με τη StarBound">About StarBound</h3>
+                <p data-en="StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology."
+                   data-el="Η StarBound είναι μια φοιτητική ομάδα αεροδιαστημικής έρευνας με έδρα τον Βόλο. Ασχολία της είναι η καινοτομία και η έρευνα στον χώρο της διαστημικής τεχνολογίας.">
+                   StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology.
+                </p>
+                <div class="social-links">
+                    <!-- <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <a href="https://gr.linkedin.com/company/starbound-project" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/starbound.project/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Partner Logos added to footer -->
+                <div class="partner-logos-footer">
+                    <a href="https://www.uth.gr/" target="_blank">
+                        <img src="Icons/UTH_greek_logo.svg" alt="UTH Logo" class="partner-logo-footer">
+                    </a>
+                    <a href="https://www.ieee.org/" target="_blank">
+                        <img src="Icons/ieee_sb.svg" alt="IEEE Logo" class="partner-logo-footer">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Quick Links" data-el="Γρήγοροι Σύνδεσμοι">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" data-en="Home" data-el="Αρχική">Home</a></li>
+                    <li><a href="members.html" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+                    <li><a href="supporters.html" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+                    <li><a href="news.html" data-en="News" data-el="Νέα">News</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-el="Επικοινωνία">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Contact Us" data-el="Επικοινωνία">Contact Us</h3>
+                <div class="contact-box-container">
+                    <div class="contact-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p data-en="University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece" data-el="Πανεπιστήμιο Θεσσαλίας, Πολυτεχνική Σχολή, Πεδίον Άρεως, Βόλος, Ελλάδα">
+                            University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece
+                            </p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+30 6974814209<br><span data-en="(Charis Zachariadis)" data-el="(Χάρης Ζαχαριάδης)">(Charis Zachariadis)</span></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>starbound.teamuth@gmail.com</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="footer-contact-link" 
+                   data-en="Contact Form" data-el="Φόρμα Επικοινωνίας">Contact Form</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p data-en="© 2025 StarBound - University of Thessaly. All rights reserved." 
+               data-el="© 2025 StarBound - Πανεπιστήμιο Θεσσαλίας. Με επιφύλαξη παντός δικαιώματος.">
+                © 2025 StarBound - University of Thessaly. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="functions/ActivateButton.js"></script>
+<script src="functions/language.js"></script>
+<script src="functions/refresh.js"></script>
+<script src="functions/mobileMenu.js"></script>
+<script>
+// Animated comet animation (kept for compatibility if needed)
+document.addEventListener('DOMContentLoaded', function() {
+    // Radar animation
+    const radar = document.querySelector('.radar-overlay');
+    if(radar) {
+        radar.style.animation = 'radar-sweep 4s infinite linear';
+    }
+});
+
+function sendMail() {
+    const currentLang = document.documentElement.lang || 'en';
+    const name = document.getElementById('name').value || '';
+    const topic = document.getElementById('topic').value || (currentLang === 'en' ? 'Contact from StarBound Website' : 'Επικοινωνία από την Ιστοσελίδα StarBound');
+    const message = document.getElementById('message').value || '';
+    
+    const subject = encodeURIComponent(topic);
+    // Updated email body format to match the requested layout
+    const body = encodeURIComponent(
+        `Message:\n${message}\n\nSincerely,\n${name}`
+    );
+    
+    window.location.href = `mailto:starbound.teamuth@gmail.com?subject=${subject}&body=${body}`;
+}
+
+// Create cosmic dust effect in the background with blue theme
+document.addEventListener('DOMContentLoaded', function() {
+    // Create cosmic background container
+    const cosmicBackground = document.getElementById('cosmic-background');
+    
+    // Limit stars to a reasonable number - too many stars can cause performance issues
+    const numStars = Math.min(Math.floor(Math.random() * 30) + 70, 100); // Maximum 100 stars
+    
+    // Create stars in batches for better performance
+    const fragment = document.createDocumentFragment();
+    
+    for (let i = 0; i < numStars; i++) {
+        createStar(fragment);
+    }
+    
+    // Append all stars at once for better performance
+    cosmicBackground.appendChild(fragment);
+    
+    // Function to create a single star
+    function createStar(container) {
+        const star = document.createElement('div');
+        star.classList.add('cosmic-star');
+        
+        // Limit size to improve performance
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Position stars only within the viewport
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+        
+        // Random opacity
+        star.style.opacity = Math.random() * 0.6 + 0.3;
+        
+        // Vary animation delay for better performance
+        const delay = Math.random() * 5;
+        star.style.animationDelay = `${delay}s`;
+        
+        // Reduce shadow complexity for better performance
+        star.style.boxShadow = `0 0 ${Math.min(size, 2)}px ${Math.min(size/3, 0.6)}px rgba(255, 255, 255, 0.6)`;
+        
+        // Use color tints that match the blue theme
+        const colors = ['white', '#E1F5FE', '#B3E5FC', '#81D4FA'];
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        star.style.backgroundColor = colors[colorIndex];
+        
+        // Add to container
+        container.appendChild(star);
+    }
+    
+    // Add resize event listener to maintain stars within viewport
+    window.addEventListener('resize', function() {
+        // Clear all stars and recreate them
+        while (cosmicBackground.firstChild) {
+            cosmicBackground.removeChild(cosmicBackground.firstChild);
+        }
+        
+        const newFragment = document.createDocumentFragment();
+        for (let i = 0; i < numStars; i++) {
+            createStar(newFragment);
+        }
+        cosmicBackground.appendChild(newFragment);
+    });
+    
+    // Animate radar sweep
+    const radar = document.querySelector('.radar-overlay');
+    if (radar) {
+        radar.style.animation = 'radar-sweep 4s infinite linear';
+    }
+});
+</script>
+</body>
+</html>

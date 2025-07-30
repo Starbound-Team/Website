@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - StarBound</title>
+    <link rel="icon" type="image/svg+xml" href="Icons/starbound_team_logo_bg.svg">
+    <link rel="stylesheet" href="css/top_bar.css">
+    <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<ul class="nav-links">
+    <!-- Logo and Company Name -->
+    <img class="bg-svg" src="Icons/top_bar_background.svg" alt="Background SVG">
+    <li class="logo">
+        <a href="index.html">
+            <img src="Icons/starbound_team_logo.svg" alt="Company Logo" class="logo-img">
+        </a>
+        <span class="company-name">
+            <span class="company-title">StarBound</span>
+            <span class="company-subtitle">An Aerospace Research Student Team</span>
+        </span>
+    </li>
+    <!-- Navigation Links -->
+    <div class="nav-items">
+        <li><a href="index.html?lang=en" onclick="setActive(this)" data-en="Home" data-el="Αρχική">Home</a></li>
+        <li><a href="members.html?lang=en" onclick="setActive(this)" class="active" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+        <li><a href="news.html?lang=en" onclick="setActive(this)" data-en="News" data-el="Νέα">News</a></li>
+        <li><a href="supporters.html?lang=en" onclick="setActive(this)" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+        <li><a href="contact.html?lang=en" onclick="setActive(this)" data-en="Contact" data-el="Επικοινωνία">Contact Us</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUHR5nvLINE5B_iUFckAYPgUM81P3yGozB6FuNV6q6mYjOQ/viewform" class="join-button" data-en="Join Us" data-el="Γίνε Μέλος" target="_blank">Join Us</a></li>
+    </div>
+    <a href="https://www.uth.gr/" target="_blank" class="uth-logo-header">
+        <img src="Icons/UTH_english_logo.svg" alt="UTH Logo" class="uth-logo-img" data-en="Icons/UTH_english_logo.svg" data-el="Icons/UTH_greek_logo.svg">
+    </a>
+    <div class="flags">
+        <img src="Icons/Flag_of_Greece.svg" alt="Greek" class="flag" onclick="changeLanguage('el')">
+        <img src="Icons/Flag_of_the_United_Kingdom.svg" alt="English" class="flag" onclick="changeLanguage('en')">
+    </div>
+</ul>
+
+<div class="members-container">
+    <h1 class="members-title" data-en="Our Team Members" data-el="Τα Μέλη της Ομάδας μας" data-translate="ourTeamMembers">Our Team Members</h1>
+    
+    <!-- Aerospace Themed Header Background -->
+    <div class="aerospace-header">
+        <div class="stars"></div>
+    </div>
+
+    <!-- Professors Section -->
+    <div class="team-section professors">
+        <h2 class="section-title" data-en="Professors" data-el="Καθηγητές" data-translate="professors">Professors</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Fotios Plessas Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/fotisplessas/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:fplessas@uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Fotios<br>Plessas" data-el="Φώτιος<br>Πλέσσας">
+                        <span class="first-name">Fotios</span>
+                        <span class="last-name">Plessas</span>
+                    </h3>
+                    <p class="member-role" data-translate="academicLead">Academic Lead</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Dimitrios Karamperopoulos Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/dimitris-karaberopoulos-28848191/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:dkarabero@uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Dimitrios<br>Karamperopoulos" data-el="Δημήτριος<br>Καραμπερόπουλος">
+                        <span class="first-name">Dimitrios</span>
+                        <span class="last-name">Karamperopoulos</span>
+                    </h3>
+                    <p class="member-role" data-translate="professor">Professor</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/george-floros-79205073" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:florosg@tcd.ie" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Georgios<br>Floros" data-el="Γεώργιος<br>Φλώρος">
+                        <span class="first-name">Georgios</span>
+                        <span class="last-name">Floros</span>
+                    </h3>
+                    <p class="member-role" data-translate="professor">Professor</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/kostas-kolomvatsos-21357a222/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:kostasks@uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Konstantinos<br>Kolombatsos" data-el="Κωνσταντίνος<br>Κολομβάτσος">
+                        <span class="first-name">Konstantinos</span>
+                        <span class="last-name">Kolombatsos</span>
+                    </h3>
+                    <p class="member-role" data-translate="professor">Professor</p>
+                    <p class="member-department" data-en="Informatics & Telecommunications Department" data-el="Τμήμα Πληροφορικής & Τηλεπικοινωνιών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/loukas-zachilas-447a7222/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:zachilas@econ.uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Loukas<br>Zacheilas" data-el="Λουκάς<br>Ζαχείλας">
+                        <span class="first-name">Loukas</span>
+                        <span class="last-name">Zacheilas</span>
+                    </h3>
+                    <p class="member-role" data-translate="professor">Professor</p>
+                    <p class="member-department" data-en="Economics Department" data-el="Τμήμα Οικονομικών Επιστημών">Economics Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <!-- <a href="" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a> -->
+                            <a href="mailto:kontaxi@uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Maria<br>Kontaxi" data-el="Μαρία<br>Κονταξή">
+                        <span class="first-name">Maria</span>
+                        <span class="last-name">Kontaxi</span>
+                    </h3>
+                    <p class="member-role" data-translate="professor">Professor</p>
+                    <p class="member-department" data-en="Economics Department" data-el="Τμήμα Οικονομικών Επιστημών">Economics Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Board Section -->
+    <div class="team-section board">
+        <h2 class="section-title" data-en="Board" data-el="Διοικητικό Συμβούλιο" data-translate="board">Board</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Charis Zachariadis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/zachariadis-charis" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/czachariadis" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:zachariadis.charis@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Charalampos<br>Zachariadis" data-el="Χαράλαμπος<br>Ζαχαριάδης">
+                        <span class="first-name">Charalampos</span>
+                        <span class="last-name">Zachariadis</span>
+                    </h3>
+                    <p class="member-role" data-translate="teamLead">Team Lead</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/toris0ev0may0the0force0be0with0you/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:vagelistor@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Evangelos<br>Toris" data-el="Ευάγγελος<br>Τόρης">
+                        <span class="first-name">Evangelos</span>
+                        <span class="last-name">Toris</span>
+                    </h3>
+                    <p class="member-role" data-translate="treasurerSecretary">Treasurer / Secretary</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Software & Embedded Systems Section -->
+    <div class="team-section software">
+        <h2 class="section-title" data-en="Software & Embedded Systems" data-el="Λογισμικό & Ενσωματωμένα Συστήματα" data-translate="softwareEmbedded">Software & Embedded Systems</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Emmanouil Raftopoulos Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/manolis-raftopoulos" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/MANRAF04" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:stedion70@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Emmanouil<br>Raftopoulos" data-el="Εμμανουήλ<br>Ραφτόπουλος">
+                        <span class="first-name">Emmanouil</span>
+                        <span class="last-name">Raftopoulos</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamLead">Subteam Lead</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Alexandros Mpesios Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/alex-besios-16a622299" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/AlexBesios" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:alexbesios02@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Alexandros<br>Mpesios" data-el="Αλέξανδρος<br>Μπέσιος">
+                        <span class="first-name">Alexandros</span>
+                        <span class="last-name">Mpesios</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Digital Systems Department" data-el="Τμήμα Ψηφιακών Συστημάτων">Digital Systems Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://linkedin.com/in/konstantinos-peridis-1b1007272" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:kperidis@uth.gr" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Konstantinos<br>Peridis" data-el="Κωνσταντίνος<br>Περίδης">
+                        <span class="first-name">Konstantinos</span>
+                        <span class="last-name">Peridis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Nikolaos Kalamaris Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:nikosklms@hotmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Nikolaos<br>Kalamaris" data-el="Νικόλαος<br>Καλαμάρης">
+                        <span class="first-name">Nikolaos</span>
+                        <span class="last-name">Kalamaris</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Panagiotis Mpalamotis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/panagiotisbalamotis" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Balamotakos" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:pa.mpalamotis@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Panagiotis<br>Mpalamotis" data-el="Παναγιώτης<br>Μπαλαμώτης">
+                        <span class="first-name">Panagiotis</span>
+                        <span class="last-name">Mpalamotis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://github.com/BillM123" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:vmadesis@proton.me" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Vasileios<br>Madesis" data-el="Βασίλειος<br>Μάδεσης">
+                        <span class="first-name">Vasileios</span>
+                        <span class="last-name">Madesis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Electrical Section -->
+    <div class="team-section electrical">
+        <h2 class="section-title" data-en="Electrical & Electronics" data-el="Ηλεκτρολογικό & Ηλεκτρονικό" data-translate="electrical">Electrical & Electronics</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Christos Vrakatselis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:stivjelis@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Christos<br>Vrakatselis" data-el="Χρήστος<br>Βρακατσέλης">
+                        <span class="first-name">Christos</span>
+                        <span class="last-name">Vrakatselis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamLead">Subteam Lead</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Athanasios Zounidis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:thanasiszoun@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Athanasios<br>Zounidis" data-el="Αθανάσιος<br>Ζουνίδης">
+                        <span class="first-name">Athanasios</span>
+                        <span class="last-name">Zounidis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:abradopoulos.g@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Ioannis<br>Avradopoulos" data-el="Ιωάννης<br>Αβραδόπουλος">
+                        <span class="first-name">Ioannis</span>
+                        <span class="last-name">Avradopoulos</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Konstantinos Sdrallis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:sdralliskonstantinos@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Konstantinos<br>Sdrallis" data-el="Κωνσταντίνος<br>Σδράλλης">
+                        <span class="first-name">Konstantinos</span>
+                        <span class="last-name">Sdrallis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/socrates-soutsiou/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/socrates018" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:socratessuciu8@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Sokratis<br>Soutsiou" data-el="Σωκράτης<br>Σούτσιου">
+                        <span class="first-name">Sokratis</span>
+                        <span class="last-name">Soutsiou</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://github.com/VasilisOuzas" class="github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:vasilisouzas@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Vasileios<br>Ouzas" data-el="Βασίλειος<br>Ούζας">
+                        <span class="first-name">Vasileios</span>
+                        <span class="last-name">Ouzas</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mechanical Section -->
+    <div class="team-section mechanical">
+        <h2 class="section-title" data-en="Mechanical" data-el="Μηχανολογικό" data-translate="mechanical">Mechanical</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Nikolaos Ntaradimos Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/nikolaosntaradimos/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:nck.darad@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Nikolaos<br>Ntaradimos" data-el="Νικόλαος<br>Νταραδήμος">
+                        <span class="first-name">Nikolaos</span>
+                        <span class="last-name">Ntaradimos</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamLead">Subteam Lead</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Alexandros Theodosiou Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/alexandros-theodosiou-7834b0368/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:theod.alexander@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Alexandros<br>Theodosiou" data-el="Αλέξανδρος<br>Θεοδωσίου">
+                        <span class="first-name">Alexandros</span>
+                        <span class="last-name">Theodosiou</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/anastasios-georgiadis-9446b4368/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:tasosgeorgiades60@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Anastasios<br>Georgiadis" data-el="Αναστάσιος<br>Γεωργιάδης">
+                        <span class="first-name">Anastasios</span>
+                        <span class="last-name">Georgiadis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/nikolaos-tasis/" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:nikos.tasisd1@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Nikolaos<br>Tasis" data-el="Νικόλαος<br>Τάσης">
+                        <span class="first-name">Nikolaos</span>
+                        <span class="last-name">Tasis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Olympia Kollia Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/olympia-kollia-9ab87b284" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:kolliaolympia@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Olympia<br>Kollia" data-el="Ολυμπία<br>Κόλλια">
+                        <span class="first-name">Olympia</span>
+                        <span class="last-name">Kollia</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Panagiotis Lampiris Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:panagiotislampiris2014@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Panagiotis<br>Lampiris" data-el="Παναγιώτης<br>Λαμπίρης">
+                        <span class="first-name">Panagiotis</span>
+                        <span class="last-name">Lampiris</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Mechanical Engineering Department" data-el="Τμήμα Μηχανολόγων Μηχανικών">Mechanical Engineering Department</p>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+
+    <!-- Finance Section -->
+    <div class="team-section finance">
+        <h2 class="section-title" data-en="Finance" data-el="Οικονομικά" data-translate="finance">Finance</h2>
+        <div class="members-grid">
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Emmanouil Prokopiou Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:man.prokopiou@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>    
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Emmanouil<br>Prokopiou" data-el="Εμμανουήλ<br>Προκοπίου">
+                        <span class="first-name">Emmanouil</span>
+                        <span class="last-name">Prokopiou</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Nikolaos Andreoglou Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:nikolas.andreoglou@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Nikolaos<br>Andreoglou" data-el="Νικόλαος<br>Ανδρεόγλου">
+                        <span class="first-name">Nikolaos</span>
+                        <span class="last-name">Andreoglou</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Economics Department" data-el="Τμήμα Οικονομικών Επιστημών">Economics Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Spyros Chatzyligkos Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/spyros-chatziligos" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:spyrosxatzhligos04@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Spyros<br>Chatziligos" data-el="Σπύρος<br>Χατζηλίγος">
+                        <span class="first-name">Spyros</span>
+                        <span class="last-name">Chatziligos</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Economics Department" data-el="Τμήμα Οικονομικών Επιστημών">Economics Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marketing Section -->
+    <div class="team-section marketing">
+        <h2 class="section-title" data-en="Marketing" data-el="Μάρκετινγκ" data-translate="marketing">Marketing</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Anna Maria Vlachogianni Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/anna-maria-vlachogianni" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:am.vlachogianni@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Anna-Maria<br>Vlachogianni" data-el="Άννα-Μαρία<br>Βλαχογιάννη">
+                        <span class="first-name compound">Anna-Maria</span>
+                        <span class="last-name">Vlachogianni</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamLead">Subteam Lead</p>
+                    <p class="member-department" data-en="Business Administration Department" data-el="Τμήμα Διοίκησης Επιχειρήσεων">Business Administration Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Epi Tampouri Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/epi-tampouri-38b375311" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:epitampouri@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Epi<br>Tampouri" data-el="Έπη<br>Ταμπούρη">
+                        <span class="first-name">Epi</span>
+                        <span class="last-name">Tampouri</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Business Administration Department" data-el="Τμήμα Διοίκησης Επιχειρήσεων">Business Administration Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Member Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:karapli.evaggeliamaria@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Evangelia-Maria<br>Karapli" data-el="Ευαγγελία-Μαρία<br>Καραπλή">
+                        <span class="first-name compound">Evangelia-Maria</span>
+                        <span class="last-name">Karapli</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Early Childhood Education Department" data-el="Παιδαγωγικό Τμήμα Προσχολικής Εκπαίδευσης">Department of Early Childhood Education</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Georgios Karamanlis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:geokaramanles@gmail.com " class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Georgios<br>Karamanlis" data-el="Γεώργος<br>Καραμανλής">
+                        <span class="first-name">Georgios</span>
+                        <span class="last-name">Karamanlis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Electrical & Computer Engineering Department" data-el="Τμήμα Ηλεκτρολόγων & Μηχανικών Υπολογιστών">Electrical & Computer Engineering Department</p>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Ioannis Kiletsis Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:gianniskiletsis@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Ioannis<br>Kiletsis" data-el="Ιωάννης<br>Κιλέτσης">
+                        <span class="first-name">Ioannis</span>
+                        <span class="last-name">Kiletsis</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Biochemistry & Biotechnology Department" data-el="Τμήμα Βιοχημείας & Βιοτεχνολογίας">Biochemistry & Biotechnology Department</p>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Petros Zountas Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/petros-zountas-9b547b27b" class="linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:nikos17nikos17@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Petros<br>Zountas" data-el="Πέτρος<br>Ζούντας">
+                        <span class="first-name">Petros</span>
+                        <span class="last-name">Zountas</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Civil Engineering Department" data-el="Τμήμα Πολιτικών Μηχανικών">Civil Engineering Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Section -->
+    <div class="team-section activities">
+        <h2 class="section-title" data-en="Activities" data-el="Δραστηριότητες" data-translate="activities">Activities</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Ioanna Petkou Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:petkouioanna7@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Ioanna<br>Petkou" data-el="Ιωάννα<br>Πέτκου">
+                        <span class="first-name">Ioanna</span>
+                        <span class="last-name">Petkou</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Primary Education Department" data-el="Παιδαγωγικό Τμήμα Δημοτικής Εκπαίδευσης">Primary Education Department</p>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <div class="member-photo-container">
+                    <img src="pictures/astronaut-avatar.png" alt="Rigas Plageras Photo" class="member-photo">
+                    <div class="member-info">
+                        <div class="member-social">
+                            <a href="mailto:rigasplg@gmail.com" class="gmail" title="Email" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-details">
+                    <h3 class="member-name" data-en="Rigas<br>Plageras" data-el="Ρήγας<br>Πλαγεράς">
+                        <span class="first-name">Rigas</span>
+                        <span class="last-name">Plageras</span>
+                    </h3>
+                    <p class="member-role" data-translate="subteamMember">Subteam Member</p>
+                    <p class="member-department" data-en="Primary Education Department" data-el="Παιδαγωγικό Τμήμα Δημοτικής Εκπαίδευσης">Primary Education Department</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section about-company animate-on-scroll">
+                <h3 data-en="About StarBound" data-el="Σχετικά με τη StarBound">About StarBound</h3>
+                <p data-en="StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology."
+                   data-el="Η StarBound είναι μια φοιτητική ομάδα αεροδιαστημικής έρευνας με έδρα τον Βόλο. Ασχολία της είναι η καινοτομία και η έρευνα στον χώρο της διαστημικής τεχνολογίας.">
+                   StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology.
+                </p>
+                <div class="social-links">
+                    <!-- <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <a href="https://gr.linkedin.com/company/starbound-project" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/starbound.project/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Partner Logos added to footer -->
+                <div class="partner-logos-footer">
+                    <a href="https://www.uth.gr/" target="_blank">
+                        <img src="Icons/UTH_greek_logo.svg" alt="UTH Logo" class="partner-logo-footer">
+                    </a>
+                    <a href="https://www.ieee.org/" target="_blank">
+                        <img src="Icons/ieee_sb.svg" alt="IEEE Logo" class="partner-logo-footer">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Quick Links" data-el="Γρήγοροι Σύνδεσμοι">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" data-en="Home" data-el="Αρχική">Home</a></li>
+                    <li><a href="members.html" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+                    <li><a href="supporters.html" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+                    <li><a href="news.html" data-en="News" data-el="Νέα">News</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-el="Επικοινωνία">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Contact Us" data-el="Επικοινωνία">Contact Us</h3>
+                <div class="contact-box-container">
+                    <div class="contact-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p data-en="University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece" data-el="Πανεπιστήμιο Θεσσαλίας, Πολυτεχνική Σχολή, Πεδίον Άρεως, Βόλος, Ελλάδα">
+                            University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece
+                            </p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+30 6974814209<br><span data-en="(Charis Zachariadis)" data-el="(Χάρης Ζαχαριάδης)">(Charis Zachariadis)</span></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>starbound.teamuth@gmail.com</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="footer-contact-link" 
+                   data-en="Contact Form" data-el="Φόρμα Επικοινωνίας">Contact Form</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p data-en="© 2025 StarBound - University of Thessaly. All rights reserved." 
+               data-el="© 2025 StarBound - Πανεπιστήμιο Θεσσαλίας. Με επιφύλαξη παντός δικαιώματος.">
+                © 2025 StarBound - University of Thessaly. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+/* Social media icon styling */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color for icons */
+    border-bottom: none; /* Explicitly remove bottom border */
+}
+
+.social-icon:hover, .social-icon:focus {
+    background-color: #03a9f4;
+    transform: translateY(-3px);
+    text-decoration: none; /* Remove underline on hover */
+    border-bottom: none; /* Explicitly remove bottom border on hover */
+    outline: none; /* Remove outline on focus */
+}
+</style>
+
+<script src="functions/ActivateButton.js"></script>
+<script slot="function" src="functions/language.js"></script>
+<script slot="function" src="functions/refresh.js"></script>
+<script src="functions/scroll-animations.js"></script>
+<script src="functions/mobileMenu.js"></script>
+<script>
+// Create cosmic dust effect in the background
+document.addEventListener('DOMContentLoaded', function() {
+    // Create cosmic background container
+    const cosmicBackground = document.createElement('div');
+    cosmicBackground.id = 'cosmic-background';
+    document.body.appendChild(cosmicBackground);
+    
+    // Create more stars for the background (150-200)
+    const numStars = Math.floor(Math.random() * 50) + 150;
+    
+    for (let i = 0; i < numStars; i++) {
+        createStar(cosmicBackground);
+    }
+    
+    // Function to create a single star
+    function createStar(container) {
+        const star = document.createElement('div');
+        star.classList.add('cosmic-star');
+        
+        // Random star size between 1-4px
+        const size = Math.random() * 3 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random position within the viewport
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * (document.body.scrollHeight);
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+        
+        // Random opacity between 0.3 and 0.9
+        star.style.opacity = Math.random() * 0.6 + 0.3;
+        
+        // Random animation delay
+        const delay = Math.random() * 5;
+        star.style.animationDelay = `${delay}s`;
+        
+        // Add light glow effect
+        star.style.boxShadow = `0 0 ${size + 1}px ${size/2}px rgba(255, 255, 255, 0.8)`;
+        
+        // Randomly colored stars (mostly white but some blue and cyan)
+        const colors = ['white', 'rgba(135, 206, 250, 0.9)', 'rgba(240, 248, 255, 0.9)', 'rgba(173, 216, 230, 0.9)'];
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        star.style.backgroundColor = colors[colorIndex];
+        
+        // Add to container
+        container.appendChild(star);
+    }
+});
+</script>
+</body>
+</html>

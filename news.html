@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - StarBound</title>
+    <link rel="icon" type="image/svg+xml" href="Icons/starbound_team_logo_bg.svg">
+    <link rel="stylesheet" href="css/top_bar.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Cosmic background styling for news page */
+        html, body {
+            height: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100%;
+            /* Updated to match members page gradient */
+            background: linear-gradient(135deg, #1c2331 0%, #0c1016 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        #cosmic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .cosmic-star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: starTwinkle 3s infinite ease-in-out, starFloat 7s infinite ease-in-out;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Simple animation for the background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Star animations */
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes starFloat {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-3px) translateX(1px); }
+            50% { transform: translateY(-1px) translateX(3px); }
+            75% { transform: translateY(2px) translateX(-1px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            padding-top: 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Page header styling */
+        .page-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .page-header .title {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            /* Blue-cyan gradient text effect */
+            background: linear-gradient(90deg, #4FC3F7, #00B0FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.2em;
+            color: #d9d9d9;
+        }
+
+        /* News card styling to match cosmic theme */
+        .news-card {
+            background: rgba(22, 22, 40, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(71, 118, 230, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(79, 195, 247, 0.5);
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.4em;
+        }
+
+        .news-date {
+            color: #90CAF9;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .news-content p {
+            color: #d9d9d9;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #4FC3F7;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #00B0FF;
+        }
+        
+        .category-label {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 12px;
+            margin-right: 8px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        /* Preserving category tag colors */
+        .category-label.projects {
+            background-color: rgba(33, 150, 243, 0.3);
+            border: 1px solid rgba(33, 150, 243, 0.5);
+            color: #90caf9;
+        }
+        
+        .category-label.labs {
+            background-color: rgba(76, 175, 80, 0.3);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            color: #a5d6a7;
+        }
+        
+        .category-label.events {
+            background-color: rgba(156, 39, 176, 0.3);
+            border: 1px solid rgba(156, 39, 176, 0.5);
+            color: #ce93d8;
+        }
+        
+        .category-label.recruitment {
+            background-color: rgba(244, 67, 54, 0.3);
+            border: 1px solid rgba(244, 67, 54, 0.5);
+            color: #ef9a9a;
+        }
+        
+        .category-label.articles {
+            background-color: rgba(255, 152, 0, 0.3);
+            border: 1px solid rgba(255, 152, 0, 0.5);
+            color: #ffcc80;
+        }
+        
+        .category-label.supporters {
+            background-color: rgba(0, 150, 136, 0.3);
+            border: 1px solid rgba(0, 150, 136, 0.5);
+            color: #80cbc4;
+        }
+        
+        .news-section {
+            margin-bottom: 60px;
+        }
+        
+        /* Updated to match home page blue */
+        .section-title {
+            font-size: 2rem;
+            color: #4776E6;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #4776E6;
+            padding-bottom: 10px;
+        }
+        
+        .category-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* Keeping the distinct category tag colors */
+        .projects-tag {
+            background-color: rgba(33, 150, 243, 0.8);
+        }
+        
+        .labs-tag {
+            background-color: rgba(76, 175, 80, 0.8);
+        }
+        
+        .events-tag {
+            background-color: rgba(255, 152, 0, 0.8);
+        }
+        
+        .recruitment-tag {
+            background-color: rgba(233, 30, 99, 0.8);
+        }
+        
+        .articles-tag {
+            background-color: rgba(156, 39, 176, 0.8);
+        }
+        
+        .supporters-tag {
+            background-color: rgba(0, 188, 212, 0.8);
+        }
+        
+        .news-image {
+            position: relative;
+        }
+        
+        /* Updated pagination styling to match home page colors */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 5px;
+        }
+        
+        .pagination a, .pagination span {
+            color: #d9d9d9;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid rgba(71, 118, 230, 0.3);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination a:hover {
+            background-color: rgba(71, 118, 230, 0.2);
+        }
+        
+        .pagination .active {
+            background-color: rgba(142, 84, 233, 0.3);
+            border: 1px solid rgba(142, 84, 233, 0.5);
+            color: #d9d9d9;
+        }
+        
+        /* Updated section divider to match home page gradient */
+        .section-divider {
+            border-top: 2px solid rgba(71, 118, 230, 0.3);
+            margin: 60px 0 40px;
+            position: relative;
+        }
+        
+        .section-divider::after {
+            content: attr(data-text);
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0c2e4d 0%, #0a192f 100%);
+            padding: 5px 20px;
+            color: #d9d9d9;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(71, 118, 230, 0.3);
+        }
+        
+        /* Updated filter controls to match home page colors */
+        .news-filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        
+        .news-filter select {
+            background: rgba(22, 22, 40, 0.6);
+            border: 1px solid rgba(71, 118, 230, 0.3);
+            color: #d9d9d9;
+            padding: 8px 15px;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .news-filter select:focus {
+            border-color: rgba(79, 195, 247, 0.7);
+        }
+        
+        .news-filter span {
+            color: #d9d9d9;
+        }
+        
+        .news-filter input {
+            background: rgba(22, 22, 40, 0.6);
+            border: 1px solid rgba(71, 118, 230, 0.3);
+            color: #d9d9d9;
+            padding: 8px 15px;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .news-filter input:focus {
+            border-color: rgba(79, 195, 247, 0.7);
+        }
+        
+        /* Fix for scrolling performance */
+        body {
+            overflow-y: auto; /* Ensure scrolling is enabled */
+        }
+        
+        /* Improve container performance */
+        .container {
+            position: relative;
+            z-index: 2;
+            contain: content;
+        }
+        
+        /* Optimize news grid rendering */
+        .news-grid {
+            contain: content;
+        }
+        
+        .news-column {
+            contain: layout;
+        }
+        
+        /* Social media icon styling */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Remove underline */
+            color: white; /* Text color for icons */
+            border-bottom: none; /* Explicitly remove bottom border */
+        }
+
+        .social-icon:hover, .social-icon:focus {
+            background-color: #03a9f4;
+            transform: translateY(-3px);
+            text-decoration: none; /* Remove underline on hover */
+            border-bottom: none; /* Explicitly remove bottom border on hover */
+            outline: none; /* Remove outline on focus */
+        }
+
+        /* Styling for top news grid */
+        .top-news-grid {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .top-news-item {
+            flex: 1;
+        }
+
+        /* Coming Soon Message Styles */
+        .coming-soon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .coming-soon-card {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .astronaut-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .coming-soon-subtitle {
+            font-size: 1.2rem;
+            color: #d9d9d9;
+            margin-bottom: 25px;
+        }
+
+        .coming-soon-message {
+            color: #d9d9d9;
+            margin-bottom: 35px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .coming-soon-message p {
+            margin-bottom: 15px;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4FC3F7;
+            margin-bottom: 8px;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #d9d9d9;
+        }
+
+        .stay-tuned-section {
+            margin-bottom: 35px;
+        }
+
+        .stay-tuned-section h3 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .social-preview {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-preview {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon-preview i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icon-preview span {
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .social-icon-preview:hover {
+            background-color: #03a9f4;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(3, 169, 244, 0.3);
+        }
+
+        .call-to-action {
+            margin-top: 30px;
+        }
+
+        .call-to-action p {
+            margin-bottom: 15px;
+            color: #d9d9d9;
+        }
+
+        .join-us-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(90deg, #4FC3F7, #00B0FF);
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+        }
+
+        .join-us-button:hover {
+            background: linear-gradient(90deg, #00B0FF, #4FC3F7);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+        }
+
+        .fun-fact {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            color: #d9d9d9;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fun-fact-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #4FC3F7;
+        }
+
+        .fun-fact-text {
+            margin: 0;
+        }
+
+        /* Responsive adjustments for coming soon section */
+        @media (max-width: 768px) {
+            .coming-soon-title {
+                font-size: 2rem;
+            }
+
+            .astronaut-icon {
+                font-size: 3rem;
+            }
+
+            .countdown-container {
+                gap: 25px;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .social-preview {
+                gap: 15px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-icon-preview {
+                min-width: 200px;
+                justify-content: center;
+            }
+
+            .join-us-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-container {
+                gap: 20px;
+            }
+
+            .social-icon-preview {
+                min-width: 180px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="cosmic-background"></div>
+
+<ul class="nav-links">
+    <!-- Logo and Company Name -->
+    <img class="bg-svg" src="Icons/top_bar_background.svg" alt="Background SVG">
+    <li class="logo">
+        <a href="index.html">
+            <img src="Icons/starbound_team_logo.svg" alt="Company Logo" class="logo-img">
+        </a>
+        <span class="company-name">
+            <span class="company-title">StarBound</span>
+            <span class="company-subtitle">An Aerospace Research Student Team</span>
+        </span>
+    </li>
+    <!-- Navigation Links -->
+    <div class="nav-items">
+        <li><a href="index.html" onclick="setActive(this)" data-en="Home" data-el="Αρχική">Home</a></li>
+        <li><a href="members.html" onclick="setActive(this)" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+        <li><a href="news.html" onclick="setActive(this)" class="active" data-en="News" data-el="Νέα">News</a></li>
+        <li><a href="supporters.html" onclick="setActive(this)" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+        <li><a href="contact.html" onclick="setActive(this)" data-en="Contact" data-el="Επικοινωνία">Contact Us</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUHR5nvLINE5B_iUFckAYPgUM81P3yGozB6FuNV6q6mYjOQ/viewform" class="join-button" data-en="Join Us" data-el="Γίνε Μέλος" target="_blank">Join Us</a></li>
+    </div>
+    <a href="https://www.uth.gr/" target="_blank" class="uth-logo-header">
+        <img src="Icons/UTH_english_logo.svg" alt="UTH Logo" class="uth-logo-img" data-en="Icons/UTH_english_logo.svg" data-el="Icons/UTH_greek_logo.svg">
+    </a>
+    <div class="flags">
+        <img src="Icons/Flag_of_Greece.svg" alt="Greek" class="flag" onclick="changeLanguage('el')">
+        <img src="Icons/Flag_of_the_United_Kingdom.svg" alt="English" class="flag" onclick="changeLanguage('en')">
+    </div>
+</ul>
+
+<div class="container">
+    <!-- Added spacer div to create gap between navigation and header -->
+    <div class="top-spacer"></div>
+    
+    <div class="page-header">
+        <h1 class="title" data-translate="pageTitle">Latest News</h1>
+    </div>
+    
+    <div class="content-section">
+        <!-- Coming Soon Message -->
+        <div class="coming-soon-container">
+            <div class="coming-soon-card">
+                <div class="astronaut-icon">
+                    🛰️
+                </div>
+                <h2 class="coming-soon-title" data-en="News Section Under Development" data-el="Σελίδα Ειδήσεων Υπό Ανάπτυξη">News Section Under Development</h2>
+                <p class="coming-soon-subtitle" data-en="Our news page is currently under development for your better information." data-el=" Η σελίδα των νέων μας βρίσκεται υπο ανάπτυξη για την καλύτερη ενημέρωση σας.">
+                    Our news page is currently under development for your better information.
+                </p>
+                <!-- <div class="coming-soon-message">
+                    <p data-en="We are working diligently to create a comprehensive news section that will feature updates about our aerospace research projects, laboratory developments, team achievements, and academic collaborations." data-el="Εργαζόμαστε επιμελώς για να δημιουργήσουμε μια ολοκληρωμένη ενότητα ειδήσεων που θα περιλαμβάνει ενημερώσεις σχετικά με τα έργα αεροδιαστημικής έρευνάς μας, τις εξελίξεις του εργαστηρίου, τα επιτεύγματα της ομάδας και τις ακαδημαϊκές συνεργασίες.">
+                        We are working diligently to create a comprehensive news section that will feature updates about our aerospace research projects, laboratory developments, team achievements, and academic collaborations.
+                    </p>
+                    <p data-en="This platform will showcase our UAV mission progress, technical innovations, research publications, conference presentations, and partnership announcements." data-el="Αυτή η πλατφόρμα θα παρουσιάζει την πρόοδο της δημιουργίας του Μη Επανδρωμένου Αεροσκάφους (UAV) μας, τις τεχνικές καινοτομίες, τις ερευνητικές δημοσιεύσεις, τις παρουσιάσεις συνεδρίων και τις ανακοινώσεις συνεργασιών.">
+                        This platform will showcase our UAV mission progress, technical innovations, research publications, conference presentations, and partnership announcements.
+                    </p>
+                </div>
+                
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <div class="countdown-number">∞</div>
+                        <div class="countdown-label" data-en="Research Projects" data-el="Ερευνητικά Έργα">Research Projects</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">∞</div>
+                        <div class="countdown-label" data-en="Innovations" data-el="Καινοτομίες">Innovations</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">∞</div>
+                        <div class="countdown-label" data-en="Achievements" data-el="Επιτεύγματα">Achievements</div>
+                    </div>
+                </div>
+
+                <div class="stay-tuned-section">
+                    <h3 data-en="Stay Updated on Our Progress" data-el="Μείνετε Ενημερωμένοι για την Πρόοδό μας">Stay Updated on Our Progress</h3>
+                    <div class="social-preview">
+                        <a href="https://gr.linkedin.com/company/starbound-project" class="social-icon-preview" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span data-en="LinkedIn" data-el="LinkedIn">LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/starbound.project/" class="social-icon-preview" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span data-en="Instagram" data-el="Instagram">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="call-to-action">
+                    <p data-en="Interested in joining our team?" data-el="Ενδιαφέρεστε να ενταχθείτε στην ομάδα;">Interested in joining our team?</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGUHR5nvLINE5B_iUFckAYPgUM81P3yGozB6FuNV6q6mYjOQ/viewform" class="join-us-button" target="_blank" data-en="Apply to Join Our Team" data-el="Υποβάλετε Αίτηση Συμμετοχής">
+                        Apply to Join Our Team
+                    </a>
+                </div>
+
+                <div class="fun-fact">
+                    <p class="fun-fact-label" data-en="Did You Know?" data-el="Γνωρίζατε ότι;">Did You Know?</p>
+                    <p class="fun-fact-text" data-en="UAVs (Unmanned Aerial Vehicles) have revolutionized aerospace research by enabling cost-effective testing of flight dynamics, sensor technologies, and autonomous systems before implementing them in larger aircraft or spacecraft." data-el="Τα UAVs (Μη Επανδρωμένα Εναέρια Οχήματα) έχουν φέρει επανάσταση στην αεροδιαστημική έρευνα επιτρέποντας τον οικονομικό έλεγχο της δυναμικής πτήσης, των τεχνολογιών αισθητήρων και των αυτόνομων συστημάτων πριν την εφαρμογή τους σε μεγαλύτερα αεροσκάφη ή διαστημόπλοια.">
+                        UAVs (Unmanned Aerial Vehicles) have revolutionized aerospace research by enabling cost-effective testing of flight dynamics, sensor technologies, and autonomous systems before implementing them in larger aircraft or spacecraft.
+                    </p>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Main News Sections based on the template -->
+        <div class="top-news-grid" style="display: none;">
+            <!-- Most Recent News -->
+            <!-- <div class="top-news-item">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-1.jpg" alt="CubeSat">
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="CubeSat Project Reaches Key Development Milestone" data-el="Το Έργο CubeSat Φτάνει σε Σημαντικό Ορόσημο Ανάπτυξης">CubeSat Project Reaches Key Development Milestone</h3>
+                        <div class="news-date">April 10, 2025</div>
+                        <p data-en="The StarBound CubeSat team has successfully completed the integration of the primary payload system, marking a significant milestone in the development timeline." data-el="Η ομάδα CubeSat της StarBound ολοκλήρωσε με επιτυχία την ενσωμάτωση του κύριου συστήματος ωφέλιμου φορτίου, σηματοδοτώντας ένα σημαντικό ορόσημο στο χρονοδιάγραμμα ανάπτυξης.">The StarBound CubeSat team has successfully completed the integration of the primary payload system, marking a significant milestone in the development timeline.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- 2nd Most Recent -->
+            <!-- <div class="top-news-item">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-2.jpg" alt="New Equipment">
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="New Thermal Vacuum Chamber Installed in Lab" data-el="Νέος Θάλαμος Θερμικού Κενού Εγκαταστάθηκε στο Εργαστήριο">New Thermal Vacuum Chamber Installed in Lab</h3>
+                        <div class="news-date">April 5, 2025</div>
+                        <p data-en="StarBound's lab facilities have been enhanced with a new thermal vacuum chamber, enabling advanced space environment testing for our components." data-el="Οι εργαστηριακές εγκαταστάσεις της StarBound έχουν αναβαθμιστεί με έναν νέο θάλαμο θερμικού κενού, επιτρέποντας προηγμένες δοκιμές διαστημικού περιβάλλοντος για τα εξαρτήματά μας.">StarBound's lab facilities have been enhanced with a new thermal vacuum chamber, enabling advanced space environment testing for our components.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- 3rd Most Recent -->
+            <!-- <div class="top-news-item">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-6.jpg" alt="New Sponsor">
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="AeroTech Industries Joins as Gold Sponsor" data-el="Η AeroTech Industries Γίνεται Χρυσός Χορηγός">AeroTech Industries Joins as Gold Sponsor</h3>
+                        <div class="news-date">April 5, 2025</div>
+                        <p data-en="We are thrilled to announce that AeroTech Industries has become a Gold Sponsor of the StarBound team, providing essential funding and technical resources." data-el="Είμαστε ενθουσιασμένοι να ανακοινώσουμε ότι η AeroTech Industries έγινε Χρυσός Χορηγός της ομάδας StarBound, παρέχοντας βασική χρηματοδότηση και τεχνικούς πόρους.">We are thrilled to announce that AeroTech Industries has become a Gold Sponsor of the StarBound team, providing essential funding and technical resources.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        
+        <!-- Section Divider -->
+        <div class="section-divider" data-text="News" data-translate="moreNews" style="display: none;"></div>
+        
+        <!-- All News Content with filtering - Hidden until we have content -->
+        <div class="news-filter" style="display: none;">
+            <span data-translate="filterBy">Filter by:</span>
+            <input type="text" id="searchFilter" placeholder="Search news..." data-translate-placeholder="search" onkeyup="filterNews()">
+            <select id="categoryFilter" onchange="filterNews()">
+                <option value="all" data-translate="allCategories">All Categories</option>
+                <option value="projects" data-translate="projects">Projects</option>
+                <option value="labs" data-translate="labs">Labs</option>
+                <option value="events" data-translate="events">Events</option>
+                <option value="recruitment" data-translate="recruitment">Recruitment</option>
+                <option value="articles" data-translate="articles">Articles</option>
+                <option value="supporters" data-translate="supporters">Supporters</option>
+            </select>
+            <select id="dateFilter" onchange="filterNews()">
+                <option value="all" data-translate="allTime">All Time</option>
+                <option value="month" data-translate="pastMonth">Past Month</option>
+                <option value="quarter" data-translate="pastQuarter">Past 3 Months</option>
+                <option value="year" data-translate="pastYear">Past Year</option>
+            </select>
+        </div>
+        
+        <div class="news-grid" style="display: none;">
+            <!-- Projects News -->
+            <!-- <div class="news-column news-category projects">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-1.jpg" alt="CubeSat">
+                        <div class="category-tag projects-tag">Projects</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="CubeSat Project Reaches Key Development Milestone" data-el="Το Έργο CubeSat Φτάνει σε Σημαντικό Ορόσημο Ανάπτυξης">CubeSat Project Reaches Key Development Milestone</h3>
+                        <div class="news-date">April 10, 2025</div>
+                        <p data-en="The StarBound CubeSat team has successfully completed the integration of the primary payload system, marking a significant milestone in the development timeline." data-el="Η ομάδα CubeSat της StarBound ολοκλήρωσε με επιτυχία την ενσωμάτωση του κύριου συστήματος ωφέλιμου φορτίου, σηματοδοτώντας ένα σημαντικό ορόσημο στο χρονοδιάγραμμα ανάπτυξης.">The StarBound CubeSat team has successfully completed the integration of the primary payload system, marking a significant milestone in the development timeline.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            Labs News -->
+            <!-- <div class="news-column news-category labs">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-2.jpg" alt="New Equipment">
+                        <div class="category-tag labs-tag">Labs</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="New Thermal Vacuum Chamber Installed in Lab" data-el="Νέος Θάλαμος Θερμικού Κενού Εγκαταστάθηκε στο Εργαστήριο">New Thermal Vacuum Chamber Installed in Lab</h3>
+                        <div class="news-date">April 5, 2025</div>
+                        <p data-en="StarBound's lab facilities have been enhanced with a new thermal vacuum chamber, enabling advanced space environment testing for our components." data-el="Οι εργαστηριακές εγκαταστάσεις της StarBound έχουν αναβαθμιστεί με έναν νέο θάλαμο θερμικού κενού, επιτρέποντας προηγμένες δοκιμές διαστημικού περιβάλλοντος για τα εξαρτήματά μας.">StarBound's lab facilities have been enhanced with a new thermal vacuum chamber, enabling advanced space environment testing for our components.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- Events News -->
+            <!-- <div class="news-column news-category events">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-3.jpg" alt="Conference">
+                        <div class="category-tag events-tag">Events</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="StarBound to Present at International Space Conference" data-el="Η StarBound θα Παρουσιάσει στο Διεθνές Συνέδριο Διαστήματος">StarBound to Present at International Space Conference</h3>
+                        <div class="news-date">March 25, 2025</div>
+                        <p data-en="Our team will be presenting our latest research on affordable propulsion technologies at the International Space Conference next month." data-el="Η ομάδα μας θα παρουσιάσει την τελευταία μας έρευνα σχετικά με οικονομικά προσιτές τεχνολογίες προώθησης στο Διεθνές Συνέδριο Διαστήματος τον επόμενο μήνα.">Our team will be presenting our latest research on affordable propulsion technologies at the International Space Conference next month.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- Recruitment News -->
+            <!-- <div class="news-column news-category recruitment">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-4.jpg" alt="Recruitment">
+                        <div class="category-tag recruitment-tag">Recruitment</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="Open Positions for Summer Internships" data-el="Ανοιχτές Θέσεις για Καλοκαιρινή Πρακτική Άσκηση">Open Positions for Summer Internships</h3>
+                        <div class="news-date">March 15, 2025</div>
+                        <p data-en="StarBound is now accepting applications for summer internships in various aerospace engineering disciplines, offering students valuable hands-on experience." data-el="Η StarBound δέχεται τώρα αιτήσεις για καλοκαιρινές πρακτικές ασκήσεις σε διάφορους τομείς αεροδιαστημικής μηχανικής, προσφέροντας στους φοιτητές πολύτιμη πρακτική εμπειρία.">StarBound is now accepting applications for summer internships in various aerospace engineering disciplines, offering students valuable hands-on experience.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- Articles News -->
+            <!-- <div class="news-column news-category articles">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-5.jpg" alt="Research Paper">
+                        <div class="category-tag articles-tag">Articles</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="New Research Paper Published on Small Satellite Propulsion" data-el="Νέα Επιστημονική Δημοσίευση για Προώθηση Μικροδορυφόρων">New Research Paper Published on Small Satellite Propulsion</h3>
+                        <div class="news-date">March 5, 2025</div>
+                        <p data-en="StarBound researchers have published a peer-reviewed paper detailing innovations in small satellite propulsion systems in the Journal of Aerospace Engineering." data-el="Οι ερευνητές της StarBound δημοσίευσαν μια επιστημονική εργασία που περιγράφει καινοτομίες στα συστήματα προώθησης μικροδορυφόρων στο Journal of Aerospace Engineering.">StarBound researchers have published a peer-reviewed paper detailing innovations in small satellite propulsion systems in the Journal of Aerospace Engineering.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- Supporters News -->
+            <!-- <div class="news-column news-category supporters">
+                <div class="news-card">
+                    <div class="news-image">
+                        <img src="Images/news-placeholder-6.jpg" alt="New Sponsor">
+                        <div class="category-tag supporters-tag">Supporters</div>
+                    </div>
+                    <div class="news-content">
+                        <h3 data-en="AeroTech Industries Joins as Gold Sponsor" data-el="Η AeroTech Industries Γίνεται Χρυσός Χορηγός">AeroTech Industries Joins as Gold Sponsor</h3>
+                        <div class="news-date">April 5, 2025</div>
+                        <p data-en="We are thrilled to announce that AeroTech Industries has become a Gold Sponsor of the StarBound team, providing essential funding and technical resources." data-el="Είμαστε ενθουσιασμένοι να ανακοινώσουμε ότι η AeroTech Industries έγινε Χρυσός Χορηγός της ομάδας StarBound, παρέχοντας βασική χρηματοδότηση και τεχνικούς πόρους.">We are thrilled to announce that AeroTech Industries has become a Gold Sponsor of the StarBound team, providing essential funding and technical resources.</p>
+                        <a href="#" class="read-more" data-translate="readMore">Read More</a>
+                    </div>
+                </div>
+            </div>
+             -->
+            <!-- Additional news items for testing pagination and filters -->
+
+        </div>
+        
+        <div id="noResults" style="display: none; text-align: center; margin: 50px 0; color: #b3e5fc; font-size: 1.2rem;" data-translate="noResults">
+            No news items match your current filter criteria.
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <!-- About -->
+            <div class="footer-section about-company animate-on-scroll">
+                <h3 data-en="About StarBound" data-el="Σχετικά με τη StarBound">About StarBound</h3>
+                <p data-en="StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology."
+                   data-el="Η StarBound είναι μια φοιτητική ομάδα αεροδιαστημικής έρευνας με έδρα τον Βόλο. Ασχολία της είναι η καινοτομία και η έρευνα στον χώρο της διαστημικής τεχνολογίας.">
+                   StarBound is a student-led aerospace research team based in Volos, Greece. Its focus is on innovation and research in space technology.
+                </p>
+                <div class="social-links">
+                    <!-- <a href="#" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a> -->
+                    <a href="https://gr.linkedin.com/company/starbound-project" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/starbound.project/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <!-- Partner Logos added to footer -->
+                <div class="partner-logos-footer">
+                    <a href="https://www.uth.gr/" target="_blank">
+                        <img src="Icons/UTH_greek_logo.svg" alt="UTH Logo" class="partner-logo-footer">
+                    </a>
+                    <a href="https://www.ieee.org/" target="_blank">
+                        <img src="Icons/ieee_sb.svg" alt="IEEE Logo" class="partner-logo-footer">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Quick Links" data-el="Γρήγοροι Σύνδεσμοι">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html" data-en="Home" data-el="Αρχική">Home</a></li>
+                    <li><a href="members.html" data-en="Our Team" data-el="Η Ομάδα Μας">Our Team</a></li>
+                    <li><a href="supporters.html" data-en="Supporters" data-el="Υποστηρικτές">Supporters</a></li>
+                    <li><a href="news.html" data-en="News" data-el="Νέα">News</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-el="Επικοινωνία">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section animate-on-scroll">
+                <h3 data-en="Contact Us" data-el="Επικοινωνία">Contact Us</h3>
+                <div class="contact-box-container">
+                    <div class="contact-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p data-en="University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece" data-el="Πανεπιστήμιο Θεσσαλίας, Πολυτεχνική Σχολή, Πεδίον Άρεως, Βόλος, Ελλάδα">
+                            University of Thessaly, Polytechnic University, Pedion Areos, Volos, Greece
+                            </p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+30 6974814209<br><span data-en="(Charis Zachariadis)" data-el="(Χάρης Ζαχαριάδης)">(Charis Zachariadis)</span></p>
+                    </div>
+                    <div class="contact-box">
+                        <i class="fas fa-envelope"></i>
+                        <p>starbound.teamuth@gmail.com</p>
+                    </div>
+                </div>
+                <a href="contact.html" class="footer-contact-link" 
+                   data-en="Contact Form" data-el="Φόρμα Επικοινωνίας">Contact Form</a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p data-en="© 2025 StarBound - University of Thessaly. All rights reserved." 
+               data-el="© 2025 StarBound - Πανεπιστήμιο Θεσσαλίας. Με επιφύλαξη παντός δικαιώματος.">
+                © 2025 StarBound - University of Thessaly. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="functions/ActivateButton.js"></script>
+<script slot="function" src="functions/language.js"></script>
+<script slot="function" src="functions/refresh.js"></script>
+<script src="functions/mobileMenu.js"></script>
+<script>
+    function setActive(element) {
+        const navLinks = document.querySelectorAll('.nav-links li a');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        element.classList.add('active');
+    }
+    
+    function filterNews() {
+        const categoryFilter = document.getElementById('categoryFilter').value;
+        const dateFilter = document.getElementById('dateFilter').value;
+        const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+        const newsItems = document.querySelectorAll('.news-category');
+        
+        let visibleCount = 0;
+        const now = new Date('2025-04-15'); // Use current date
+        
+        newsItems.forEach(item => {
+            const title = item.querySelector('.news-content h3').textContent.toLowerCase();
+            const description = item.querySelector('.news-content p').textContent.toLowerCase();
+            const dateText = item.querySelector('.news-date').textContent.trim();
+            const itemDate = new Date(dateText + ' 00:00:00');
+            
+            const matchesSearch = title.includes(searchFilter) || description.includes(searchFilter);
+            const matchesCategory = categoryFilter === 'all' || item.classList.contains(categoryFilter);
+            let matchesDate = true;
+            if (dateFilter !== 'all') {
+                let diffDays = (now - itemDate) / (1000 * 60 * 60 * 24);
+                if (dateFilter === 'month') {
+                    matchesDate = diffDays <= 31;
+                } else if (dateFilter === 'quarter') {
+                    matchesDate = diffDays <= 93;
+                } else if (dateFilter === 'year') {
+                    matchesDate = diffDays <= 366;
+                }
+            }
+            
+            if (matchesSearch && matchesCategory && matchesDate) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show or hide the "no results" message
+        document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+</script>
+<script>
+// Create cosmic dust effect in the background
+document.addEventListener('DOMContentLoaded', function() {
+    // Create cosmic background container
+    const cosmicBackground = document.getElementById('cosmic-background');
+    
+    // Limit stars to a reasonable number - too many stars can cause performance issues
+    const numStars = Math.min(Math.floor(Math.random() * 30) + 70, 100); // Maximum 100 stars
+    
+    // Create stars in batches for better performance
+    const fragment = document.createDocumentFragment();
+    
+    for (let i = 0; i < numStars; i++) {
+        createStar(fragment);
+    }
+    
+    // Append all stars at once for better performance
+    cosmicBackground.appendChild(fragment);
+    
+    // Function to create a single star
+    function createStar(container) {
+        const star = document.createElement('div');
+        star.classList.add('cosmic-star');
+        
+        // Limit size to improve performance
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Position stars only within the viewport
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+        
+        // Random opacity
+        star.style.opacity = Math.random() * 0.6 + 0.3;
+        
+        // Vary animation delay for better performance
+        const delay = Math.random() * 5;
+        star.style.animationDelay = `${delay}s`;
+        
+        // Reduce shadow complexity for better performance
+        star.style.boxShadow = `0 0 ${Math.min(size, 2)}px ${Math.min(size/3, 0.6)}px rgba(255, 255, 255, 0.6)`;
+        
+        // Use color tints that match the blue theme
+        const colors = ['white', '#E1F5FE', '#B3E5FC', '#81D4FA'];
+        const colorIndex = Math.floor(Math.random() * colors.length);
+        star.style.backgroundColor = colors[colorIndex];
+        
+        // Add to container
+        container.appendChild(star);
+    }
+    
+    // Add resize event listener to maintain stars within viewport
+    window.addEventListener('resize', function() {
+        // Clear all stars and recreate them
+        while (cosmicBackground.firstChild) {
+            cosmicBackground.removeChild(cosmicBackground.firstChild);
+        }
+        
+        const newFragment = document.createDocumentFragment();
+        for (let i = 0; i < numStars; i++) {
+            createStar(newFragment);
+        }
+        cosmicBackground.appendChild(newFragment);
+    });
+});
+</script>
+</body>
+</html>
