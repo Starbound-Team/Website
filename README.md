@@ -10,7 +10,7 @@
   
   **Bound for the Stars, Driven by Innovation**
   
-  [🌐 Live Demo](https://czachariadis.github.io/starbound_website/)
+  [🌐 Live Demo]((https://starbound-team.github.io/Website/))
 </div>
 
 ---
